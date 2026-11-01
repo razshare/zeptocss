@@ -1,7 +1,7 @@
 <style>
     @import "./app.css";
 
-    .microcss {
+    .tinycss {
         padding: 1rem;
         position: fixed;
         left: 0;
@@ -15,7 +15,7 @@
     }
 </style>
 
-<div class="microcss">
+<div class="tinycss">
     <dialog id="modal">
         <article>
             <h3>Confirmation.</h3>

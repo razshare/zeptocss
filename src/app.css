@@ -1,4 +1,4 @@
-@keyframes microcss-spinner-rotate {
+@keyframes tinycss-spinner-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -7,7 +7,7 @@
     }
 }
 
-.microcss {
+.tinycss {
     --dzi: 100;
     --font:
         system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, Helvetica Neue, sans-serif,
@@ -64,10 +64,10 @@
         margin-bottom: calc(var(--unit) * 0.3);
     }
 
-    --chvrn: url("./src/assets/chevron.svg");
-    --hlnk: url("./src/assets/hyperlink.svg");
-    --ext: url("./src/assets/external.svg");
-    --srch: url("./src/assets/search.svg");
+    --chvrn: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M9 18L15 12L9 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    --hlnk: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' /><path d='M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' /></svg>");
+    --ext: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M13 5h6v6' /><path d='M19 5L10 14' /><path d='M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5' /></svg>");
+    --srch: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7' /><path d='m16 16 4 4' /></svg>");
     details {
         width: 100%;
         position: relative;
@@ -459,7 +459,7 @@
         border: calc(var(--unit) * 0.1) solid rgb(from var(--thm) r g b / 20%);
         border-top-color: var(--thm);
         border-radius: 50%;
-        animation: microcss-spinner-rotate 0.8s linear infinite;
+        animation: tinycss-spinner-rotate 0.8s linear infinite;
         margin-left: calc(var(--unit) * 0.1);
         margin-right: calc(var(--unit) * 0.1);
     }

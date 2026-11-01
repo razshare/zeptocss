@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "microcss",
+      "name": "tinycss",
       "devDependencies": {
         "@eslint/compat": "2.1.1",
         "@eslint/js": "10.0.1",

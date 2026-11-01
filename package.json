@@ -1,5 +1,5 @@
 {
-    "name": "microcss",
+    "name": "tinycss",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -40,13 +40,13 @@
         "css",
         "html"
     ],
-    "homepage": "https://github.com/razshare/microcss#readme",
+    "homepage": "https://github.com/razshare/tinycss#readme",
     "bugs": {
-        "url": "https://github.com/razshare/microcss/issues"
+        "url": "https://github.com/razshare/tinycss/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/razshare/microcss.git"
+        "url": "git+https://github.com/razshare/tinycss.git"
     },
     "license": "MIT",
     "author": "Razvan Tanase"
