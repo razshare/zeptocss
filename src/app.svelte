@@ -1,5 +1,5 @@
 <style>
-    @import "./app.css";
+    @import "./tiny.css";
 
     .tinycss {
         padding: 1rem;
@@ -10,9 +10,9 @@
         bottom: 0;
         overflow: auto;
     }
-    .debug {
+    /* .debug {
         outline: 1px solid rgba(255, 50, 50, 0.3);
-    }
+    } */
 </style>
 
 <div class="tinycss">

@@ -4,8 +4,8 @@
     "version": "0.0.1",
     "type": "module",
     "files": [
-        "dist/",
-        "src/",
+        "dist/tiny.min.css",
+        "src/tiny.css",
         "LICENSE"
     ],
     "scripts": {
