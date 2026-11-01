@@ -1,7 +1,7 @@
 <style>
     @import "./tiny.css";
 
-    .tinycss {
+    .zeptocss {
         padding: 1rem;
         position: fixed;
         left: 0;
@@ -15,7 +15,7 @@
     } */
 </style>
 
-<div class="tinycss">
+<div class="zeptocss">
     <dialog id="modal">
         <article>
             <h3>Confirmation.</h3>

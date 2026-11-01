@@ -1,4 +1,4 @@
-@keyframes tinycss-spinner-rotate {
+@keyframes zeptocss-spinner-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -7,7 +7,7 @@
     }
 }
 
-.tinycss {
+.zeptocss {
     --dzi: 100;
     --font:
         system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, Helvetica Neue, sans-serif,
@@ -462,7 +462,7 @@
         border: calc(var(--unit) * 0.1) solid rgb(from var(--thm) r g b / 20%);
         border-top-color: var(--thm);
         border-radius: 50%;
-        animation: tinycss-spinner-rotate 0.8s linear infinite;
+        animation: zeptocss-spinner-rotate 0.8s linear infinite;
         margin-left: calc(var(--unit) * 0.1);
         margin-right: calc(var(--unit) * 0.1);
     }
