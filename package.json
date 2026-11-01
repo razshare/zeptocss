@@ -1,0 +1,47 @@
+{
+    "name": "microcss",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "bunx svelte-kit sync && bunx svelte-check --tsconfig ./jsconfig.json",
+        "check:watch": "bunx svelte-kit sync && bunx svelte-check --tsconfig ./jsconfig.json --watch",
+        "format": "prettier --write .",
+        "lint": "prettier --check . && eslint ."
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "7.3.1",
+        "svelte": "5.57.3",
+        "vite": "8.3.5",
+        "@eslint/compat": "2.1.1",
+        "@eslint/js": "10.0.1",
+        "@mdi/js": "7.4.47",
+        "@tsconfig/svelte": "5.0.8",
+        "@types/node": "26.6.6",
+        "esbuild": "0.28.2",
+        "eslint": "10.14.0",
+        "eslint-config-prettier": "10.1.8",
+        "eslint-plugin-svelte": "3.23.1",
+        "prettier": "3.9.10",
+        "prettier-plugin-svelte": "4.1.1",
+        "svelte-check": "4.7.7"
+    },
+    "keywords": [
+        "micro",
+        "css",
+        "html"
+    ],
+    "homepage": "https://github.com/razshare/microcss#readme",
+    "bugs": {
+        "url": "https://github.com/razshare/microcss/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/razshare/microcss.git"
+    },
+    "license": "MIT",
+    "author": "Razvan Tanase"
+}
