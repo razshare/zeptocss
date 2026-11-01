@@ -9,3 +9,5 @@ check:
 	npm run check
 build:
 	npm run build
+publish:
+	npm publish

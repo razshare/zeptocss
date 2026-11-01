@@ -10,6 +10,7 @@
     ],
     "scripts": {
         "dev": "vite",
+        "prepare": "npm run build",
         "build": "vite build",
         "preview": "vite preview",
         "check": "bunx svelte-kit sync && bunx svelte-check --tsconfig ./jsconfig.json",
