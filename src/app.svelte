@@ -16,6 +16,132 @@
 </style>
 
 <div class="zeptocss">
+    <fieldset>
+        <legend>Language preference:</legend>
+        <label>
+            <input type="radio" name="language" checked />
+            English
+        </label>
+        <label>
+            <input type="radio" name="language" />
+            French
+        </label>
+        <label>
+            <input type="radio" name="language" />
+            Mandarin
+        </label>
+        <label>
+            <input type="radio" name="language" />
+            Thai
+        </label>
+        <label aria-disabled="true">
+            <input type="radio" name="language" disabled />
+            Dothraki
+        </label>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Language preferences</legend>
+        <label>
+            <input type="checkbox" name="english" checked aria-invalid="true" />
+            English
+        </label>
+        <label>
+            <input type="checkbox" name="french" checked aria-invalid="false" />
+            French
+        </label>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+        <label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </fieldset>
+    <hr />
+    <fieldset role="group">
+        <legend>Language preferences</legend>
+        <label>
+            <input type="checkbox" name="english" checked />
+            English
+        </label>
+        <label>
+            <input type="checkbox" name="french" checked />
+            French
+        </label>
+        <label>
+            <input type="checkbox" name="mandarin" />
+            Mandarin
+        </label>
+        <label>
+            <input type="checkbox" name="thai" />
+            Thai
+        </label>
+        <label aria-disabled="true">
+            <input type="checkbox" name="dothraki" disabled />
+            Dothraki
+        </label>
+    </fieldset>
+    <hr />
+    <select aria-invalid="false">
+        <option>Peperoni</option>
+        <option>Mushrooms</option>
+        <option>Onions</option>
+        <option>Green Peppers</option>
+        <option>Olives</option>
+    </select>
+    <small>Great choice!</small>
+
+    <select required aria-invalid="true">
+        <option>Peperoni</option>
+        <option>Mushrooms</option>
+        <option>Onions</option>
+        <option>Green Peppers</option>
+        <option>Olives</option>
+    </select>
+    <small> Please select your favorite pizza topping! </small>
+    <hr />
+    <select aria-label="Select your favorite snacks..." multiple size="6">
+        <option disabled> Select your favorite snacks... </option>
+        <option>Cheese</option>
+        <option selected>Fruits</option>
+        <option selected>Nuts</option>
+        <option>Chocolate</option>
+        <option>Crackers</option>
+    </select>
+    <hr />
+    <select name="favorite-cuisine" aria-label="Select your favorite cuisine..." required>
+        <option selected disabled value=""> Select your favorite cuisine... </option>
+        <option>Italian</option>
+        <option>Japanese</option>
+        <option>Indian</option>
+        <option>Thai</option>
+        <option>French</option>
+    </select>
+    <hr />
+    <textarea aria-invalid="false"></textarea>
+    <textarea aria-invalid="true"></textarea>
+    <hr />
+    <input type="text" name="text" value="Read-only" aria-label="Read-only input" readonly />
+    <hr />
+    <input type="text" name="text" placeholder="Disabled" aria-label="Disabled input" disabled />
+    <hr />
+    <input type="file" />
+    <hr />
+    <input type="color" value="#ff9500" aria-label="Color picker" />
+    <hr />
+    <input type="date" name="date" aria-label="Date" />
+    <input type="datetime-local" name="datetime-local" aria-label="Datetime local" />
+    <input type="month" name="month" aria-label="Month" />
+    <input type="time" name="time" aria-label="Time" />
+    <hr />
+    <input type="number" name="" id="" />
+    <hr />
     <dialog id="modal">
         <article>
             <h3>Confirmation.</h3>
@@ -39,7 +165,6 @@
     </form>
     <hr />
     <textarea name="" id=""></textarea>
-    <hr />
     <hr />
     <form action="">
         <fieldset role="group">
