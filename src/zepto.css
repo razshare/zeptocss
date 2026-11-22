@@ -518,7 +518,7 @@
     }
     input[type="radio"] {
         &::before {
-            border-radius: 20rem;
+            border-radius: calc(var(--rnd) * 2);
         }
         &::after {
             mask-image: var(--blt);
@@ -783,7 +783,6 @@
             }
         }
     }
-
     *[aria-disabled="true"],
     input[disabled] {
         & * {
