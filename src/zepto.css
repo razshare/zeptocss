@@ -16,7 +16,7 @@
     --bg: #0f131c;
     --txt: #c2c7d0;
 
-    --unit: 2rem;
+    --unit: 1rem;
     --dly: 200ms;
 
     --rnd: calc(var(--unit)/3);
@@ -456,23 +456,29 @@
     }
     input[type="checkbox"],
     input[type="radio"] {
-        outline: 0;
         appearance: none;
+        outline: 0;
+        padding: 0;
+        outline: 0;
         background: transparent;
         vertical-align: middle;
         display: inline-block;
         cursor: pointer;
         position: relative;
         color: transparent;
+        width: var(--unit);
+        height: var(--unit);
+        min-height: 0;
+        line-height: 0;
         border: calc(var(--unit) * 0.1) solid var(--thm-bg);
         background-color: rgb(from var(--thm-bg) r g b / 10%);
         &::before {
             content: "";
             position: absolute;
-            width: var(--unit);
-            height: var(--unit);
-            left: calc(var(--unit) / 20);
-            top: calc(var(--unit) / 20);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
             transition: transform var(--dly);
             background-color: var(--thm-fg);
             transform: scale(0);
@@ -504,13 +510,13 @@
             }
         }
     }
-    input[type="checkbox"] {
-        border-radius: var(--rnd);
+    input[type="radio"] {
+        border-radius: calc(var(--rnd) * 5);
         &::before {
-            mask-image: var(--chk);
+            mask-image: var(--blt);
             mask-size: var(--unit) auto;
             mask-repeat: no-repeat;
-            mask-position: left;
+            mask-position: center;
         }
         &:checked {
             &::before {
@@ -518,33 +524,31 @@
             }
         }
     }
-    input[role="switch"] {
-        width: calc(var(--unit) * 2);
-        height: calc(var(--unit) * 1.2);
-        border-radius: calc(var(--rnd) * 4);
+    input[type="checkbox"] {
+        border-radius: var(--rnd);
         &::before {
-            mask-image: var(--blt);
-            transform: translateX(0) scale(1);
-            left: calc(var(--unit) * -0.1);
-            top: calc(var(--unit) / 18);
+            mask-image: var(--chk);
+            mask-size: var(--unit) auto;
+            mask-repeat: no-repeat;
+            mask-position: center;
         }
         &:checked {
             &::before {
-                transform: translateX(calc(var(--unit) * 0.9)) scale(3);
+                transform: scale(0.8);
             }
         }
     }
-    input[type="radio"] {
-        border-radius: calc(var(--rnd) * 5);
+    input[role="switch"] {
+        width: calc(var(--unit) * 2);
+        height: calc(var(--unit) * 1);
+        border-radius: calc(var(--rnd) * 4);
         &::before {
             mask-image: var(--blt);
-            mask-size: var(--unit) auto;
-            mask-repeat: no-repeat;
-            mask-position: left;
+            transform: translateX(calc(var(--unit) * -0.5)) scale(1);
         }
         &:checked {
             &::before {
-                transform: scale(2);
+                transform: translateX(calc(var(--unit) * 0.5)) scale(2);
             }
         }
     }
