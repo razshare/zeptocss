@@ -456,7 +456,6 @@
     }
     input[type="checkbox"],
     input[type="radio"] {
-        margin: 0;
         outline: 0;
         appearance: none;
         background: transparent;
@@ -464,8 +463,6 @@
         display: inline-block;
         cursor: pointer;
         position: relative;
-        padding: var(--unit);
-        transform: scale(0.5);
         color: transparent;
         border: calc(var(--unit) * 0.1) solid var(--thm-bg);
         background-color: rgb(from var(--thm-bg) r g b / 10%);
@@ -474,8 +471,8 @@
             position: absolute;
             width: var(--unit);
             height: var(--unit);
-            left: calc(var(--unit) / 2);
-            top: calc(var(--unit) / 2);
+            left: calc(var(--unit) / 20);
+            top: calc(var(--unit) / 20);
             transition: transform var(--dly);
             background-color: var(--thm-fg);
             transform: scale(0);
@@ -517,20 +514,23 @@
         }
         &:checked {
             &::before {
-                transform: scale(2);
+                transform: scale(1);
             }
         }
     }
     input[role="switch"] {
-        width: calc(var(--unit) * 4);
+        width: calc(var(--unit) * 2);
+        height: calc(var(--unit) * 1.2);
         border-radius: calc(var(--rnd) * 4);
         &::before {
             mask-image: var(--blt);
-            transform: translateX(0) scale(2);
+            transform: translateX(0) scale(1);
+            left: calc(var(--unit) * -0.1);
+            top: calc(var(--unit) / 18);
         }
         &:checked {
             &::before {
-                transform: translateX(calc(var(--unit) * 1.8)) scale(5);
+                transform: translateX(calc(var(--unit) * 0.9)) scale(3);
             }
         }
     }
@@ -544,7 +544,7 @@
         }
         &:checked {
             &::before {
-                transform: scale(4);
+                transform: scale(2);
             }
         }
     }

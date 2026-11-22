@@ -16,7 +16,8 @@
 </style>
 
 <div class="zeptocss">
-    <input type="checkbox" role="switch" name="language" aria-invalid="true" />
+    <input type="radio" name="language" aria-invalid="true" />
+    <span>test</span>
     <hr />
     <article>I’m a card!</article>
     <hr />
