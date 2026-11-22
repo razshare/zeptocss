@@ -374,6 +374,7 @@
     fieldset {
         border: 0;
         padding: 0;
+        padding-bottom: var(--unit);
         &[role="group"] {
             & legend {
                 margin-left: calc(var(--unit) * 0.5);
@@ -463,57 +464,69 @@
         cursor: pointer;
         outline: none;
         position: relative;
+        width: calc(var(--unit) * 2);
+        height: var(--unit);
         &::before {
-            content: ">>";
-            color: transparent;
+            content: "";
+            position: absolute;
             width: var(--unit);
             height: var(--unit);
+            color: transparent;
             border: calc(var(--unit) * 0.1) solid var(--thm-bg);
+            background: rgb(from var(--thm-bg) r g b / 10%);
             border-radius: var(--rnd);
         }
-        &:checked::before {
-            background: var(--thm-bg);
-        }
         &::after {
+            content: "";
             position: absolute;
-            content: ">>";
             width: var(--unit);
             height: var(--unit);
-            top: calc(var(--unit) / 2);
-            left: calc((var(--unit) / 2) + var(--unit) / 10);
+            left: calc(var(--unit) * 0.63);
+            top: calc(var(--unit) * 0.63);
             color: transparent;
-            width: var(--unit);
-            height: var(--unit);
-            top: calc(var(--unit) / 2);
-            left: calc((var(--unit) / 2) + var(--unit) / 10);
             mask-image: var(--chk);
             transition: transform var(--dly);
             transform: scale(0);
         }
-        &:checked::after {
-            mask-size: var(--unit) auto;
-            mask-repeat: no-repeat;
-            mask-position: left;
-            background-color: var(--thm-fg);
-            transform: scale(1);
+        &[aria-invalid="true"] {
+            &::before {
+                border-color: var(--dng-bg);
+                background: rgb(from var(--dng-bg) r g b / 10%);
+            }
         }
-        &[aria-invalid="true"]::before {
-            border-color: var(--dng-bg);
+        &[aria-invalid="false"] {
+            &::before {
+                border-color: var(--scs-bg);
+                background: rgb(from var(--scs-bg) r g b / 10%);
+            }
         }
-        &[aria-invalid="true"]:checked::before {
-            background: var(--dng-bg);
-        }
-        &[aria-invalid="true"]:checked::after {
-            background-color: var(--dng-fg);
-        }
-        &[aria-invalid="false"]::before {
-            border-color: var(--scs-bg);
-        }
-        &[aria-invalid="false"]:checked::before {
-            background: var(--scs-bg);
-        }
-        &[aria-invalid="false"]:checked::after {
-            background-color: var(--scs-fg);
+        &:checked {
+            &::before {
+                background: var(--thm-bg);
+            }
+            &::after {
+                mask-size: var(--unit) auto;
+                mask-repeat: no-repeat;
+                mask-position: left;
+                background-color: var(--thm-fg);
+                transform: scale(1);
+            }
+            &[aria-invalid="true"] {
+                &::before {
+                    background: var(--dng-bg);
+                }
+                &::after {
+                    background-color: var(--dng-fg);
+                }
+            }
+            &[aria-invalid="false"] {
+                &::before {
+                    background: var(--scs-bg);
+                }
+                &::after {
+                    background-color: var(--scs-fg);
+                }
+            }
         }
     }
     input[type="radio"] {
@@ -528,65 +541,30 @@
         }
     }
     input[type="checkbox"][role="switch"] {
-        padding: 0;
-        display: inline;
-        position: relative;
-        background-color: rgb(from var(--thm-bg) r g b / 10%);
-        border-radius: calc(var(--rnd) * 2);
+        width: calc(var(--unit) * 3);
         &::before {
-            content: ">";
-            display: inline-block;
-            margin-top: calc(var(--unit) * 0.5);
-            height: calc(var(--unit) * 0.9);
-            width: calc(var(--unit) * 0.9);
-            margin-left: 0;
-            margin-right: calc(var(--unit) * 0.5);
-            border-color: var(--thm-bg);
-            background-color: var(--thm-bg);
+            width: calc(var(--unit) * 2);
             border-radius: calc(var(--rnd) * 2);
-            transform: scale(0.7) translateX(calc(var(--unit) * -0.1));
-            transition:
-                transform var(--dly),
-                margin-left var(--dly),
-                margin-right var(--dly),
-                background-color var(--dly),
-                border-color var(--dly);
         }
         &::after {
-            content: "";
-            display: none;
-            background: none;
+            mask-image: none;
+            background-color: var(--thm-fg);
+            border-radius: calc(var(--rnd) * 2);
+            transform: scale(0.7) translateX(0);
         }
-        &:checked {
-            border-color: var(--thm-bg);
-            background-color: var(--thm-bg);
-            &::before {
-                transform: scale(0.7) translateX(calc(var(--unit) * 0.1));
-                border-color: var(--thm-fg);
-                background-color: var(--thm-fg);
-                margin-left: calc(var(--unit) * 0.5);
-                margin-right: 0;
-            }
-        }
-
         &[aria-invalid="false"] {
-            background-color: rgb(from var(--thm-bg) r g b / 10%);
-            &::before {
-                border-color: var(--scs-bg);
-                background-color: rgb(from var(--scs-bg) r g b / 50%);
-            }
-            &:checked {
-                background-color: rgb(from var(--scs-bg) r g b / 30%);
+            &::after {
+                background-color: var(--scs-fg);
             }
         }
         &[aria-invalid="true"] {
-            background-color: rgb(from var(--thm-bg) r g b / 10%);
-            &::before {
-                border-color: var(--dng-bg);
-                background-color: rgb(from var(--dng-bg) r g b / 50%);
+            &::after {
+                background-color: var(--dng-fg);
             }
-            &:checked {
-                background-color: rgb(from var(--dng-bg) r g b / 30%);
+        }
+        &:checked {
+            &::after {
+                transform: translateX(var(--unit));
             }
         }
     }
