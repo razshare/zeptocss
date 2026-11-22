@@ -373,7 +373,6 @@
     }
     fieldset {
         border: 0;
-        padding: 0;
         padding-bottom: var(--unit);
         &[role="group"] {
             & legend {
@@ -457,114 +456,95 @@
     }
     input[type="checkbox"],
     input[type="radio"] {
-        border: 0;
+        margin: 0;
+        outline: 0;
         appearance: none;
         background: transparent;
-        place-content: center;
+        vertical-align: middle;
+        display: inline-block;
         cursor: pointer;
-        outline: none;
         position: relative;
-        width: calc(var(--unit) * 2);
-        height: var(--unit);
+        padding: var(--unit);
+        transform: scale(0.5);
+        color: transparent;
+        border: calc(var(--unit) * 0.1) solid var(--thm-bg);
+        background-color: rgb(from var(--thm-bg) r g b / 10%);
         &::before {
             content: "";
             position: absolute;
             width: var(--unit);
             height: var(--unit);
-            color: transparent;
-            border: calc(var(--unit) * 0.1) solid var(--thm-bg);
-            background-color: rgb(from var(--thm-bg) r g b / 10%);
-            border-radius: var(--rnd);
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            width: var(--unit);
-            height: var(--unit);
-            left: calc(var(--unit) * 0.63);
-            top: calc(var(--unit) * 0.63);
-            color: transparent;
-            mask-image: var(--chk);
+            left: calc(var(--unit) / 2);
+            top: calc(var(--unit) / 2);
             transition: transform var(--dly);
+            background-color: var(--thm-fg);
             transform: scale(0);
         }
-        &[aria-invalid="true"] {
+        &:checked {
+            background-color: var(--thm-bg);
             &::before {
-                border-color: var(--dng-bg);
-                background-color: rgb(from var(--dng-bg) r g b / 10%);
+                background-color: var(--thm-fg);
+            }
+        }
+        &[aria-invalid="true"] {
+            border-color: var(--dng-bg);
+            background-color: rgb(from var(--dng-bg) r g b / 10%);
+            &::before {
+                background-color: var(--dng-fg);
+            }
+            &:checked {
+                background-color: var(--dng-bg);
             }
         }
         &[aria-invalid="false"] {
+            border-color: var(--scs-bg);
+            background-color: rgb(from var(--scs-bg) r g b / 10%);
             &::before {
-                border-color: var(--scs-bg);
-                background-color: rgb(from var(--scs-bg) r g b / 10%);
+                background-color: var(--scs-fg);
             }
+            &:checked {
+                background-color: var(--scs-bg);
+            }
+        }
+    }
+    input[type="checkbox"] {
+        border-radius: var(--rnd);
+        &::before {
+            mask-image: var(--chk);
+            mask-size: var(--unit) auto;
+            mask-repeat: no-repeat;
+            mask-position: left;
         }
         &:checked {
             &::before {
-                background-color: var(--thm-bg);
+                transform: scale(2);
             }
-            &::after {
-                mask-size: var(--unit) auto;
-                mask-repeat: no-repeat;
-                mask-position: left;
-                background-color: var(--thm-fg);
-                transform: scale(1);
-            }
-            &[aria-invalid="true"] {
-                &::before {
-                    background-color: var(--dng-bg);
-                }
-                &::after {
-                    background-color: var(--dng-fg);
-                }
-            }
-            &[aria-invalid="false"] {
-                &::before {
-                    background-color: var(--scs-bg);
-                }
-                &::after {
-                    background-color: var(--scs-fg);
-                }
+        }
+    }
+    input[role="switch"] {
+        width: calc(var(--unit) * 4);
+        border-radius: calc(var(--rnd) * 4);
+        &::before {
+            mask-image: var(--blt);
+            transform: translateX(0) scale(2);
+        }
+        &:checked {
+            &::before {
+                transform: translateX(calc(var(--unit) * 1.8)) scale(5);
             }
         }
     }
     input[type="radio"] {
+        border-radius: calc(var(--rnd) * 5);
         &::before {
-            border-radius: calc(var(--rnd) * 2);
-        }
-        &::after {
             mask-image: var(--blt);
-        }
-        &:checked::after {
-            transform: scale(1.7);
-        }
-    }
-    input[type="checkbox"][role="switch"] {
-        width: calc(var(--unit) * 3);
-        &::before {
-            width: calc(var(--unit) * 2);
-            border-radius: calc(var(--rnd) * 2);
-        }
-        &::after {
-            mask-image: none;
-            background-color: var(--thm-fg);
-            border-radius: calc(var(--rnd) * 2);
-            transform: scale(0.7) translateX(0);
-        }
-        &[aria-invalid="false"] {
-            &::after {
-                background-color: var(--scs-fg);
-            }
-        }
-        &[aria-invalid="true"] {
-            &::after {
-                background-color: var(--dng-fg);
-            }
+            mask-size: var(--unit) auto;
+            mask-repeat: no-repeat;
+            mask-position: left;
         }
         &:checked {
-            &::after {
-                transform: translateX(var(--unit));
+            &::before {
+                transform: scale(4);
             }
         }
     }
@@ -627,6 +607,8 @@
         }
     }
     label:has([type="checkbox"], [type="radio"]) {
+        margin: 0;
+        padding: 0;
         width: -moz-fit-content;
         width: fit-content;
         cursor: pointer;
