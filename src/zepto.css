@@ -760,4 +760,27 @@
         background-color: rgba(0, 0, 0, 0.1);
         border-radius: var(--rnd);
     }
+    progress {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 100%;
+        height: calc(var(--unit) * 0.4);
+        border-radius: var(--rnd);
+        overflow: hidden;
+        border: 0;
+        box-shadow:
+            inset 0 0 0 calc(var(--unit) * 0.03) var(--thm-bg),
+            inset 0 0 0 calc(var(--unit) * 0.03) var(--thm-bg);
+
+        background: rgb(from var(--thm-bg) r g b / 10%);
+    }
+    progress::-webkit-progress-bar {
+        background: rgb(from var(--thm-bg) r g b / 10%);
+    }
+    progress::-webkit-progress-value {
+        background: var(--thm-bg);
+    }
+    progress::-moz-progress-bar {
+        background: var(--thm-bg);
+    }
 }

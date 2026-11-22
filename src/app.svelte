@@ -16,8 +16,9 @@
 </style>
 
 <div class="zeptocss">
-    <input type="radio" name="language" aria-invalid="true" />
-    <span>test</span>
+    <progress></progress>
+    <hr />
+    <progress value="56" max="100"></progress>
     <hr />
     <article>I’m a card!</article>
     <hr />
