@@ -784,7 +784,8 @@
         }
     }
 
-    *[aria-disabled="true"] {
+    *[aria-disabled="true"],
+    input[disabled] {
         & * {
             pointer-events: none;
         }
