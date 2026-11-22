@@ -5,7 +5,7 @@
     "type": "module",
     "files": [
         "dist/tiny.min.css",
-        "src/tiny.css",
+        "src/zepto.css",
         "LICENSE"
     ],
     "scripts": {

@@ -1,5 +1,5 @@
 <style>
-    @import "./tiny.css";
+    @import "./zepto.css";
 
     .zeptocss {
         padding: 1rem;
@@ -16,6 +16,59 @@
 </style>
 
 <div class="zeptocss">
+    <article>I’m a card!</article>
+    <hr />
+    <details name="example">
+        <summary>Accordion 2</summary>
+        <ul>
+            <li>...</li>
+            <li>...</li>
+        </ul>
+    </details>
+    <hr />
+    <label>
+        Brightness
+        <input type="range" />
+    </label>
+
+    <label>
+        Contrast
+        <input type="range" value="40" />
+    </label>
+    <hr />
+    <fieldset>
+        <label>
+            <input name="2fa" type="checkbox" role="switch" aria-invalid="false" />
+            Enable two-factor authentication
+        </label>
+        <label>
+            <input name="subscription" type="checkbox" role="switch" aria-invalid="true" />
+            Automatic subscription renewal
+        </label>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <label>
+            <input name="publish" type="checkbox" role="switch" disabled />
+            Publish on my profile
+        </label>
+        <label>
+            <input name="change-password" type="checkbox" role="switch" checked disabled />
+            Change my password at next login
+        </label>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <label>
+            <input name="terms" type="checkbox" role="switch" />
+            I agree to the Terms
+        </label>
+        <label>
+            <input name="opt-in" type="checkbox" role="switch" checked />
+            Receive news and offers
+        </label>
+    </fieldset>
+    <hr />
     <fieldset>
         <legend>Language preference:</legend>
         <label>

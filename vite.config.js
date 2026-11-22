@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [svelte()],
     build: {
         rolldownOptions: {
-            input: ["src/tiny.css"],
+            input: ["src/zepto.css"],
             output: {
                 assetFileNames: "[name].min.[ext]",
             },
