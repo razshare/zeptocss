@@ -20,7 +20,12 @@
     <hr />
     <progress value="56" max="100"></progress>
     <hr />
-    <article>I’m a card!</article>
+    <article>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, nostrum commodi! Beatae ut neque, accusamus,
+        reprehenderit accusantium libero eos minima, error facere aut cum aspernatur officia totam minus? Nulla est vero
+        vel tempora eveniet! Ratione commodi, fugit iure totam assumenda possimus a, illo aperiam, adipisci enim quia
+        maiores. Saepe, aliquam!
+    </article>
     <hr />
     <details name="example">
         <summary>Accordion 2</summary>

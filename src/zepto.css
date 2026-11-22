@@ -13,6 +13,9 @@
         system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, Helvetica Neue, sans-serif,
         Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
+    --tt-bg: rgb(0, 0, 0);
+    --tt-txt: #c2c7d0;
+
     --bg: #0f131c;
     --txt: #c2c7d0;
 
@@ -39,11 +42,13 @@
     --chk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     --err: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     --blt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/svg%3E");
+    --trg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'><path d='M8 5L16 12L8 19Z'/></svg>");
 
     color: var(--txt);
     background-color: var(--bg);
     color-scheme: light dark;
     * {
+        position: relative;
         box-sizing: border-box;
     }
     & {
@@ -62,7 +67,6 @@
 
     details {
         width: 100%;
-        position: relative;
         margin-top: var(--mgn);
         margin-bottom: var(--mgn);
         & > summary {
@@ -73,9 +77,9 @@
         }
         & > summary::after {
             content: "";
+            float: right;
             width: var(--unit);
             height: var(--unit);
-            float: right;
             mask-image: var(--chvrn);
             mask-size: var(--unit) auto;
             mask-repeat: no-repeat;
@@ -155,7 +159,6 @@
         cursor: help;
     }
     mark {
-        position: relative;
         background-color: transparent;
         color: var(--txt);
         padding-left: calc(var(--unit) * 0.1);
@@ -178,7 +181,6 @@
         font-weight: bold;
     }
     s {
-        position: relative;
         text-decoration: none;
         &:after {
             content: "";
@@ -191,7 +193,6 @@
         }
     }
     del {
-        position: relative;
         text-decoration: none;
         color: var(--dng-fg);
         &:after {
@@ -205,7 +206,6 @@
         }
     }
     ins {
-        position: relative;
         text-decoration: none;
         color: var(--scs-fg);
         &:after {
@@ -219,7 +219,6 @@
         }
     }
     kbd {
-        position: relative;
         color: var(--bg);
         background-color: var(--txt);
         padding: calc(var(--unit) * 0.3);
@@ -228,7 +227,6 @@
     blockquote {
         margin: 0;
         display: inline-table;
-        position: relative;
         width: 100%;
         padding-top: calc(var(--unit) * 0.7);
         padding-bottom: calc(var(--unit) * 0.7);
@@ -251,7 +249,6 @@
     }
     a,
     a:active {
-        position: relative;
         color: var(--txt);
         text-decoration: dotted underline var(--txt) calc(var(--unit) * 0.01);
         cursor: pointer;
@@ -288,7 +285,6 @@
         opacity: 0.7;
     }
     table {
-        position: relative;
         border-collapse: collapse;
         display: inline-table;
         padding: 0;
@@ -297,11 +293,9 @@
         & > tbody,
         & > tfoot {
             & > tr {
-                position: relative;
                 & > td,
                 & > th {
                     text-align: start;
-                    position: relative;
                     padding: calc(var(--unit) * 0.3);
                 }
 
@@ -398,7 +392,6 @@
         color: var(--txt);
         min-height: 2rem;
         outline: none;
-        position: relative;
         border: calc(var(--unit) * 0.03) solid rgb(from var(--txt) r g b / 10%);
         background-color: rgb(from var(--txt) r g b / 5%);
         border-radius: var(--rnd);
@@ -425,7 +418,6 @@
     }
     input[type="file"] {
         cursor: pointer;
-        position: relative;
         color: rgb(from var(--txt) r g b / 70%);
         padding-right: 20%;
         &::file-selector-button {
@@ -464,7 +456,6 @@
         vertical-align: middle;
         display: inline-block;
         cursor: pointer;
-        position: relative;
         color: transparent;
         width: var(--unit);
         height: var(--unit);
@@ -621,7 +612,6 @@
         border-radius: var(--rnd);
         color: var(--txt);
         appearance: none;
-        position: relative;
         padding-inline-end: calc(var(--unit) * 0.5);
         background-color: transparent;
         @supports (appearance: base-select) {
@@ -757,7 +747,7 @@
     }
     article {
         padding: var(--unit);
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.3);
         border-radius: var(--rnd);
     }
     progress {
